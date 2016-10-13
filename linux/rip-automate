@@ -9,22 +9,22 @@ E_WRONGARGS=66 # wrong number of arguments passed to script
 
 # check the exit status of pgrep kodi is zero
 if [[ $(pgrep kodi) && $? -eq 0 ]]; then
-    printf "%s\n" "kodi is runnning"
-	 sleep 5s
-    printf "%s\n" "start automation script"
-    # automation code goes here
-	 sleep 5s
-    printf "%s\n" "killing kodi"
-	 kill -9 $(pgrep kodi)
-    exit "$SUCCESS"
+	printf "%s\n" "kodi is runnning"
+   sleep 5s
+	printf "%s\n" "start automation script"
+	# automation code goes here
+   sleep 5s
+   printf "%s\n" "killing kodi"
+   kill -9 $(pgrep kodi)
+   exit "$SUCCESS"
 else
     printf "%s\n" "kodi isnt running so lets start it"
-	 kodi &>/dev/null &
-	 sleep 5s
+    kodi &>/dev/null &
+    sleep 5s
     printf "%s\n" "start automation script"
     # automation code goes here
-	 sleep 5s
+    sleep 5s
     printf "%s\n" "killing kodi"
-	 kill -9 $(pgrep kodi)
+    kill -9 $(pgrep kodi)
     exit "$SUCCESS"
 fi
